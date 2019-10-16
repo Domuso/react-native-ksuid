@@ -1,5 +1,6 @@
 'use strict'
 const baseConvertIntArray = require('base-convert-int-array')
+const Buffer = require('buffer/').Buffer
 
 const CHARS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 
