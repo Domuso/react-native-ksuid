@@ -4,6 +4,7 @@
 // const {inspect: {custom: customInspectSymbol}} = require('util')
 const padStart = require('string.prototype.padstart')
 const base62 = require('./base62')
+const Buffer = require('buffer/').Buffer
 
 // function asyncRandomBytes (size) {
 //   return new Promise((resolve, reject) => {

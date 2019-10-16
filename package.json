@@ -12,8 +12,7 @@
     "index.d.ts",
     "base62.js"
   ],
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jbcampbe/ksuid.git"
@@ -29,6 +28,7 @@
   "homepage": "https://github.com/jbcampbe/ksuid#readme",
   "dependencies": {
     "base-convert-int-array": "^1.0.1",
+    "buffer": "^5.4.3",
     "string.prototype.padstart": "^3.0.0"
   },
   "devDependencies": {
