@@ -1,7 +1,7 @@
 {
-  "name": "ksuid",
-  "version": "1.2.0",
-  "description": "Node.js implementation of K-Sortable Globally Unique IDs",
+  "name": "@jbcampbell/ksuid",
+  "version": "2.0.0",
+  "description": "React Native implementation of K-Sortable Globally Unique IDs",
   "engine": {
     "node": ">=6 <7 || >=8 <9 || >=10"
   },
@@ -13,29 +13,25 @@
     "base62.js"
   ],
   "scripts": {
-    "lint": "as-i-preach",
-    "test": "npm run -s lint && tsc --noEmit test/typings.ts && nyc ava"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/novemberborn/ksuid.git"
+    "url": "git+https://github.com/jbcampbe/ksuid.git"
   },
   "keywords": [
     "uuid",
     "ksuid"
   ],
-  "author": "Mark Wubben (https://novemberborn.net/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/novemberborn/ksuid/issues"
+    "url": "https://github.com/jbcampbe/ksuid/issues"
   },
-  "homepage": "https://github.com/novemberborn/ksuid#readme",
+  "homepage": "https://github.com/jbcampbe/ksuid#readme",
   "dependencies": {
     "base-convert-int-array": "^1.0.1",
     "string.prototype.padstart": "^3.0.0"
   },
   "devDependencies": {
-    "@novemberborn/as-i-preach": "^10.1.0",
     "@types/node": "^10.12.18",
     "ava": "^1.1.0",
     "codecov": "^3.1.0",
@@ -49,6 +45,5 @@
       "lcov",
       "text"
     ]
-  },
-  "standard-engine": "@novemberborn/as-i-preach"
+  }
 }
