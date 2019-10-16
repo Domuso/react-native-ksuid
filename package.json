@@ -1,6 +1,6 @@
 {
   "name": "@jbcampbell/ksuid",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "React Native implementation of K-Sortable Globally Unique IDs",
   "engine": {
     "node": ">=6 <7 || >=8 <9 || >=10"
