@@ -1,7 +1,7 @@
 {
   "name": "@jbcampbell/ksuid",
   "version": "2.4.0",
-  "description": "React Native implementation of K-Sortable Globally Unique IDs",
+  "description": "Implementation of K-Sortable Globally Unique IDs for React Native",
   "engine": {
     "node": ">=6 <7 || >=8 <9 || >=10"
   },
@@ -12,7 +12,9 @@
     "index.d.ts",
     "base62.js"
   ],
-  "scripts": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jbcampbe/ksuid.git"
@@ -29,14 +31,11 @@
   "dependencies": {
     "base-convert-int-array": "^1.0.1",
     "buffer": "^5.4.3",
+    "react-native-randombytes": "^3.5.3",
     "string.prototype.padstart": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "^10.12.18",
-    "ava": "^1.1.0",
-    "codecov": "^3.1.0",
-    "lolex": "^3.0.0",
-    "nyc": "^13.1.0",
     "typescript": "^3.2.4"
   },
   "nyc": {

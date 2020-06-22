@@ -1,22 +1,22 @@
 'use strict'
 
-// const { randomBytes } = require('crypto-browserify')
-const padStart = require('string.prototype.padstart')
-const base62 = require('./base62')
-const Buffer = require('buffer/').Buffer
+import { randomBytes } from 'react-native-randombytes'
+import padStart from 'string.prototype.padstart'
+import base62 from './base62'
+import { Buffer } from 'buffer'
 
-// function asyncRandomBytes (size) {
-//   return new Promise((resolve, reject) => {
-//     randomBytes(size, (err, bytes) => {
-//       /* istanbul ignore if */
-//       if (err) {
-//         reject(err)
-//       } else {
-//         resolve(bytes)
-//       }
-//     })
-//   })
-// }
+function asyncRandomBytes (size) {
+  return new Promise((resolve, reject) => {
+    randomBytes(size, (err, bytes) => {
+      /* istanbul ignore if */
+      if (err) {
+        reject(err)
+      } else {
+        resolve(bytes)
+      }
+    })
+  })
+}
 
 // KSUID's epoch starts more recently so that the 32-bit number space gives a
 // significantly higher useful lifetime of around 136 years from March 2014.
@@ -108,14 +108,14 @@ class KSUID {
     return `${this[Symbol.toStringTag]} { ${this.string} }`
   }
 
-  // static random () {
-  //   return asyncRandomBytes(PAYLOAD_BYTE_LENGTH).then(payload => new KSUID(fromParts(Date.now(), payload)))
-  // }
-  // 
-  // static randomSync () {
-  //   const payload = randomBytes(PAYLOAD_BYTE_LENGTH)
-  //   return new KSUID(fromParts(Date.now(), payload))
-  // }
+  static random () {
+    return asyncRandomBytes(PAYLOAD_BYTE_LENGTH).then(payload => new KSUID(fromParts(Date.now(), payload)))
+  }
+
+  static randomSync () {
+    const payload = randomBytes(PAYLOAD_BYTE_LENGTH)
+    return new KSUID(fromParts(Date.now(), payload))
+  }
 
   static fromParts (timeInMs, payload) {
     if (!Number.isInteger(timeInMs) || timeInMs < EPOCH_IN_MS || timeInMs > MAX_TIME_IN_MS) {
