@@ -1,6 +1,6 @@
 'use strict'
 
-// const { randomBytes } = require('crypto-browserify')
+const randomBytes = require('randombytes');
 const padStart = require('string.prototype.padstart')
 const base62 = require('./base62')
 const Buffer = require('buffer/').Buffer
@@ -108,14 +108,14 @@ class KSUID {
     return `${this[Symbol.toStringTag]} { ${this.string} }`
   }
 
-  // static random () {
-  //   return asyncRandomBytes(PAYLOAD_BYTE_LENGTH).then(payload => new KSUID(fromParts(Date.now(), payload)))
-  // }
-  // 
-  // static randomSync () {
-  //   const payload = randomBytes(PAYLOAD_BYTE_LENGTH)
-  //   return new KSUID(fromParts(Date.now(), payload))
-  // }
+  static random () {
+    return randomBytes(PAYLOAD_BYTE_LENGTH).then(payload => new KSUID(fromParts(Date.now(), payload)))
+  }
+
+  static randomSync () {
+    const payload = randomBytes(PAYLOAD_BYTE_LENGTH)
+    return new KSUID(fromParts(Date.now(), payload))
+  }
 
   static fromParts (timeInMs, payload) {
     if (!Number.isInteger(timeInMs) || timeInMs < EPOCH_IN_MS || timeInMs > MAX_TIME_IN_MS) {
